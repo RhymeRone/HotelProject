@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HotelProject.DataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20240307174850_mig1")]
+    [Migration("20240309121616_mig1")]
     partial class mig1
     {
         /// <inheritdoc />
@@ -99,6 +99,10 @@ namespace HotelProject.DataAccessLayer.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StaffID"));
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Image")
                         .IsRequired()

@@ -53,6 +53,7 @@ namespace HotelProject.DataAccessLayer.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Image = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     SocialMedia1 = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     SocialMedia2 = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     SocialMedia3 = table.Column<string>(type: "nvarchar(max)", nullable: false)
