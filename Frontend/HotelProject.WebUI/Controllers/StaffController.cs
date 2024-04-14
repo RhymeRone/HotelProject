@@ -42,7 +42,6 @@ namespace HotelProject.WebUI.Controllers
             {
                 return RedirectToAction("Index");
             }
-            else ModelState.AddModelError(string.Empty,responseMessage.Content.ToString());  
             return View();
         }
     }

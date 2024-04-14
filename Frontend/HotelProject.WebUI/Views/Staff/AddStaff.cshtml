@@ -4,8 +4,11 @@
     ViewData["Title"] = "AddStaff";
     Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
 }
-@Html.ValidationSummary(true)
+
 <form method="post">
+    <label>Personel Resmi:</label>
+    <input type="file" asp-for="Image" class="form-control" />
+    <br />
     <label>Personel Adı:</label>
     <input type="text" asp-for="Name" class="form-control" />
     <br />
