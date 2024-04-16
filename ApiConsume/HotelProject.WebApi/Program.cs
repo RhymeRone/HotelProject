@@ -1,3 +1,4 @@
+using AutoMapper;
 using HotelProject.BusinessLayer.Abstract;
 using HotelProject.BusinessLayer.Concrete;
 using HotelProject.DataAccessLayer.Abstract;
@@ -24,6 +25,8 @@ builder.Services.AddScoped<ISubscribeService, SubscribeManager>();
 
 builder.Services.AddScoped<IServiceDal, EfServiceDal>();
 builder.Services.AddScoped<IServiceService, ServiceManager>();
+
+builder.Services.AddAutoMapper(typeof(Program));
 
 builder.Services.AddCors(apt =>
 {

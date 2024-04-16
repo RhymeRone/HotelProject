@@ -1,4 +1,5 @@
 ﻿using HotelProject.EntityLayer.Concrete;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,11 +9,12 @@ using System.Threading.Tasks;
 
 namespace HotelProject.DataAccessLayer.Concrete
 {
-    public class Context : DbContext
+    public class Context : IdentityDbContext<AppUser,AppRole,int>
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=ACER\\SQLEXPRESS;Initial Catalog=ApiDB;Integrated Security=True;TrustServerCertificate=True");
+            string connectionString = "Server=ACER\\SQLEXPRESS;Initial Catalog=ApiDB;Integrated Security=True;TrustServerCertificate=True;";
+            optionsBuilder.UseSqlServer(connectionString);
         }
         public DbSet<Room> Rooms { get; set; }
         public DbSet<Service> Services { get; set; }
